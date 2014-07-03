@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using DemoApp.ViewModels;
+using Nancy;
 
 namespace ConsoleApplication1.Modules
 {
@@ -6,7 +7,7 @@ namespace ConsoleApplication1.Modules
     {
         public SiteModule()
         {
-            Get["/"] = o => View["Home"];
+            Get["/"] = o => View["Home", new HomeViewModel { WelcomeMessage = "Hello World"}];
         }
     }
 }
