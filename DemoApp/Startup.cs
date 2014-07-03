@@ -16,12 +16,20 @@ namespace DemoApp
         public void Configuration(IAppBuilder app)
         {
             UseErrorPage(app);
-            HandleRequest(app);
-            UseNancy(app);
-            UseWebApi(app);
-            UseStaticFiles(app);
-            UseSignalR(app);
             UseCustomLoggingMiddleware(app);
+            HandleRequest(app);
+            UseStaticFiles(app);
+
+            app = UseLoggingFromHereOn(app);
+            
+            UseWebApi(app);
+            UseNancy(app);
+            UseSignalR(app);
+        }
+
+        private IAppBuilder UseLoggingFromHereOn(IAppBuilder app)
+        {
+            return app.Use(LoggingMiddleware);
         }
 
         private void UseCustomLoggingMiddleware(IAppBuilder app)
