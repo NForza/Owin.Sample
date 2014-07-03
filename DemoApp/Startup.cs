@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
+using Nancy.Owin;
 using Owin;
 
 namespace DemoApp
@@ -53,7 +54,9 @@ namespace DemoApp
 
         private static void UseNancy(IAppBuilder app)
         {
-            app.Map("/site", builder => builder.UseNancy());
+            NancyOptions options = new NancyOptions {Bootstrapper = new OwinDemoBootstrapper()};
+
+            app.Map("/site", builder => builder.UseNancy(options));
         }
 
         private static void HandleRequest(IAppBuilder app)
