@@ -8,6 +8,7 @@ namespace DemoApp.Modules
         public SiteModule()
         {
             Get["/"] = o => View["Home", new HomeViewModel { WelcomeMessage = "Hello World"}];
+            Get["/{greeting}"] = o => View["Home", new HomeViewModel { WelcomeMessage = o.greeting }];
         }
     }
 }

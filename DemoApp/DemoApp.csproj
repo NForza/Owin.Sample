@@ -115,7 +115,7 @@
   <ItemGroup>
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Modules\SiteModule.cs" />
-    <Compile Include="MyHub.cs" />
+    <Compile Include="SignalR\MyHub.cs" />
     <Compile Include="OwinDemoBootstrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
