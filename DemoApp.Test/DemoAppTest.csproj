@@ -111,7 +111,7 @@
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication1\DemoApp.csproj">
+    <ProjectReference Include="..\DemoApp\DemoApp.csproj">
       <Project>{94ee8641-d61a-4085-b72d-99fd06bd23b9}</Project>
       <Name>DemoApp</Name>
     </ProjectReference>
