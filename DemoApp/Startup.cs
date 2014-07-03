@@ -43,9 +43,9 @@ namespace DemoApp
 
         private async Task LoggingMiddleware(IOwinContext context, Func<Task> next)
         {
-            Console.WriteLine("Before call - {0}", context.Request.QueryString);
+            Console.WriteLine("Before call - {0}", context.Request.RemoteIpAddress);
             await next();
-            Console.WriteLine("After call - {0}", context.Request.QueryString);
+            Console.WriteLine("After call - {0}", context.Request.RemoteIpAddress);
         }
 
         private static void UseErrorPage(IAppBuilder app)
