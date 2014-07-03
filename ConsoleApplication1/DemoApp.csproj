@@ -116,32 +116,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="Client\Application Files\WpfDemoApp_1_0_0_0\WpfDemoApp.application">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Client\Application Files\WpfDemoApp_1_0_0_0\WpfDemoApp.exe.config.deploy">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Client\Application Files\WpfDemoApp_1_0_0_0\WpfDemoApp.exe.deploy">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Client\Application Files\WpfDemoApp_1_0_0_0\WpfDemoApp.exe.manifest">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Client\WpfDemoApp.application">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Client\publish.htm">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Client\setup.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

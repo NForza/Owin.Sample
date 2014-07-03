@@ -14,7 +14,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\thomash\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\Client\</PublishUrl>
+    <PublishUrl>C:\Users\thomash\Documents\Visual Studio 2013\Projects\Owin Sample\ConsoleApplication1\Client\</PublishUrl>
     <Install>false</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,9 +28,11 @@
     <UpdateUrl>http://localhost:12345/client/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>

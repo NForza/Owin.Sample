@@ -35,14 +35,7 @@ namespace DemoApp
                 RequestPath = new PathString("/Scripts"),
                 FileSystem = new PhysicalFileSystem(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts"))
             };
-            app.UseStaticFiles(options);
-
-            StaticFileOptions wpfoptions = new StaticFileOptions()
-            {
-                RequestPath = new PathString("/Client"),
-                FileSystem = new PhysicalFileSystem(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Client"))
-            };
-            app.UseStaticFiles(wpfoptions);
+            app.UseStaticFiles(options);            
 
             app.MapSignalR();
         }
