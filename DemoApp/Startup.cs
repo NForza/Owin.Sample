@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
@@ -20,6 +21,23 @@ namespace DemoApp
             UseWebApi(app);
             UseStaticFiles(app);
             UseSignalR(app);
+            UseCustomLoggingMiddleware(app);
+        }
+
+        private void UseCustomLoggingMiddleware(IAppBuilder app)
+        {
+            app.Map("/log", builder => builder.Use(LoggingMiddleware).Run( environment =>
+            {
+                environment.Response.ContentType = "text/plain";
+                return environment.Response.WriteAsync("Hello World");
+            }));
+        }
+
+        private async Task LoggingMiddleware(IOwinContext context, Func<Task> next)
+        {
+            Console.WriteLine("Before call - {0}", context.Request.QueryString);
+            await next();
+            Console.WriteLine("After call - {0}", context.Request.QueryString);
         }
 
         private static void UseErrorPage(IAppBuilder app)
