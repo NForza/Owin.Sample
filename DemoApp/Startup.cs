@@ -13,31 +13,56 @@ namespace DemoApp
     {
         public void Configuration(IAppBuilder app)
         {
+            UseErrorPage(app);
+            HandleRequest(app);
+            UseNancy(app);
+            UseWebApi(app);
+            UseStaticFiles(app);
+            UseSignalR(app);
+        }
+
+        private static void UseErrorPage(IAppBuilder app)
+        {
 #if DEBUG
             app.UseErrorPage();
 #endif
-            app.Map("/test", builder => builder.Run(environment =>
-            {
-                environment.Response.ContentType = "text/plain";
-                return environment.Response.WriteAsync("Hello World");
-            }));
-           
-            app.Map("/site", builder => builder.UseNancy());
-            var config = new HttpConfiguration();
-            config.MapHttpAttributeRoutes();
+        }
 
-            app.Map("/api", builder => builder.UseWebApi(config));
-             
+        private static void UseSignalR(IAppBuilder app)
+        {
             app.UseCors(CorsOptions.AllowAll);
+            app.MapSignalR();
+        }
 
+        private static void UseStaticFiles(IAppBuilder app)
+        {
             StaticFileOptions options = new StaticFileOptions()
             {
                 RequestPath = new PathString("/Scripts"),
                 FileSystem = new PhysicalFileSystem(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts"))
             };
-            app.UseStaticFiles(options);            
+            app.UseStaticFiles(options);
+        }
 
-            app.MapSignalR();
+        private static void UseWebApi(IAppBuilder app)
+        {
+            var config = new HttpConfiguration();
+            config.MapHttpAttributeRoutes();
+            app.Map("/api", builder => builder.UseWebApi(config));
+        }
+
+        private static void UseNancy(IAppBuilder app)
+        {
+            app.Map("/site", builder => builder.UseNancy());
+        }
+
+        private static void HandleRequest(IAppBuilder app)
+        {
+            app.Map("/test", builder => builder.Run(environment =>
+            {
+                environment.Response.ContentType = "text/plain";
+                return environment.Response.WriteAsync("Hello World");
+            }));
         }
     }
 }
