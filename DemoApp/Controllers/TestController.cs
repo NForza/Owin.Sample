@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace ConsoleApplication1.Controllers
+namespace DemoApp.Controllers
 {
     public class TestController: ApiController
     {

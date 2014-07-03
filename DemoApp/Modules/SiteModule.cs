@@ -1,7 +1,7 @@
 ﻿using DemoApp.ViewModels;
 using Nancy;
 
-namespace ConsoleApplication1.Modules
+namespace DemoApp.Modules
 {
     public class SiteModule: NancyModule
     {
