@@ -14,6 +14,7 @@ namespace DemoApp
                 Console.WriteLine("WebApi:     http://localhost:12345/api");
                 Console.WriteLine("Nancy:      http://localhost:12345/site");
                 Console.WriteLine("Nancy:      http://localhost:12345/site/hello");
+                Console.WriteLine("SignalR:    http://localhost:12345/site");
                 Console.ReadLine();
             }
         }
