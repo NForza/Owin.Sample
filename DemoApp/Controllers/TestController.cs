@@ -9,6 +9,5 @@ namespace DemoApp.Controllers
         {
             return "api";
         }
-
     }
 }
